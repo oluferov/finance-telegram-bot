@@ -90,7 +90,7 @@ async def month_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     for category, total in records:
         response += f"• *{category}*: {total:.2f} руб.\n"
 
-    total_month = sum([total for _, total in records)
+    total_month = sum([total for _, total in records])
     response += f"\n💵 *Итого за месяц:* {total_month:.2f} руб."
 
     await update.message.reply_text(response, parse_mode='Markdown')
